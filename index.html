@@ -4,7 +4,7 @@
   <head>
     <meta charset='utf-8' />
     <meta http-equiv="X-UA-Compatible" content="chrome=1" />
-    <meta name="description" content="Bitvote : BitVote developed on Ethereum" />
+    <meta name="description" content="Bitvote : Actual Democracy powered by Ethereum.org" />
 
     <link rel="stylesheet" type="text/css" media="screen" href="stylesheets/stylesheet.css">
 
@@ -19,7 +19,7 @@
           <a id="forkme_banner" href="https://github.com/arkbg1/BitVote">View on GitHub</a>
 
           <h1 id="project_title">Bitvote</h1>
-          <h2 id="project_tagline">BitVote developed on Ethereum</h2>
+          <h2 id="project_tagline">Actual Democracy powered by Ethereum.org</h2>
 
             <section id="downloads">
               <a class="zip_download_link" href="https://github.com/arkbg1/BitVote/zipball/master">Download this project as a .zip file</a>
@@ -34,7 +34,34 @@
         <h3>
 <a name="welcome-to-github-pages" class="anchor" href="#welcome-to-github-pages"><span class="octicon octicon-link"></span></a>Welcome to GitHub Pages.</h3>
 
-<p>This automatic page generator is the easiest way to create beautiful pages for all of your projects. Author your page content here using GitHub Flavored Markdown, select a template crafted by a designer, and publish. After your page is generated, you can check out the new branch:</p>
+<p><h1>Prototype VOTE MINIONS</h1>
+
+<a href="https://www.youtube.com/watch?v=9pSh0VAVYn4">VOTE or DIE</a>
+
+<button id="register_button" onclick="register()">Grow your powah!</button>
+
+<span id="voting_whole">
+<p>SUCH Voting-powah grows EVERY MILLISECOND: <b id="power_time"></b></p>
+
+<table id="entry_table">
+<tr><td><b>Vote</b></td><td>amount:</td><td>
+    <input type="number" id="spend_time" value="0" onkeyup="update_spend_time()" onchange="update_spend_time();"><button id="to_fraction", onclick="button_to_fraction()">to 10%</button>
+</td><td id="amount_note"></td></tr>
+<br>
+<tr><td></td><td>To:</td><td>
+<!-- Really we probably want a address input,
+     that can do stuff like look at NameReg automatically.
+     But also want to have it be an accepted votable.. -->
+    <input type="text" id="spend_addr", onkeyup="update_spend_addr()" onchange="update_spend_addr()"></td><td id="spend_addr_note"></td></tr>
+</table> 
+<button id="button" onclick="spend_time_button();">VOTE</button> 
+
+<p id="progress"></p>
+<p id="passed"></p>
+</span>
+
+<script src="js.js"></script>
+</body></p>
 
 <pre><code>$ cd your_repo_root/repo_name
 $ git fetch origin
