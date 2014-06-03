@@ -2,6 +2,9 @@
 
 var date = new Date();
 
+var avail_time  = document.getElementById("avail_time");
+var reg_time    = document.getElementById("reg_time");
+var cur_time    = document.getElementById("cur_time");
 var spend_time  = document.getElementById("spend_time");
 var button      = document.getElementById("button");
 var spend_addr  = document.getElementById("spend_addr");
@@ -9,6 +12,7 @@ var power_time  = document.getElementById("power_time");
 var progress    = document.getElementById("progress");
 var passed      = document.getElementById("passed");
 var to_fraction = document.getElementById("to_fraction");
+
 
 var amount_note     = document.getElementById("amount_note");
 var spend_addr_note = document.getElementById("spend_addr_note");
@@ -25,6 +29,27 @@ var participated = {};
 var var_from_time = 0; //eth.getStorageAt(vote_address, own_address);
 function from_time()
 {   return var_from_time; }
+
+// NOTE: start arkbg1 testing section
+
+function avail_time()
+{
+return date.getTime() - from_time();
+}
+
+
+function reg_time()
+{
+    var d = new Date;
+register_button.onclick=function(d)
+}
+
+function cur_time()
+{
+return date.getTime()
+}
+
+// NOTE: end arkbg1 testing section
 
 function power_available()  // Amount of time available to spend.
 {   return date.getTime() - from_time(); }
