@@ -41,6 +41,18 @@
 <span id="voting_whole">
 
 <p>Current Time: <b id="power_time"></b></p>
+ 
+ <script type="text/javascript">
+var clock24_69902 = new clock24('69902',-300,'%hh:%nn:%ss','en');
+clock24_69902.daylight('US'); clock24_69902.refresh();
+</script>
+ 
+ <!-- arkbg1: 4 timers go here
+ Registration Time: hh:mm:ss   <-- static, on click
+ Current Time: hh:mm:ss   <-- live
+ Spent Vote-Time: 00:00:00  <-- static now, interactive later
+ Available Vote-Time: hh:mm:ss  <-- live, stop watch on click
+ -->
 
 <table id="entry_table">
 <tr><td>Vote-Time:</td><td>
