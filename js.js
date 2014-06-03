@@ -1,17 +1,26 @@
 //Note; just mucked up for now.
 
-var date = new Date();
+var state;
+window.onload = function() {
+    state = {
+        date: new Date(),
+        spend_time: document.getElementById("spend_time"),
+        button: document.getElementById("button"),
+        spend_addr: document.getElementById("spend_addr"),
+        power_time: document.getElementById("power_time"),
+        progress: document.getElementById("progress"),
+        passed: document.getElementById("passed"),
+        to_fraction: document.getElementById("to_fraction"),
+        amount_note: document.getElementById("amount_note"),
+        spend_addr_note: document.getElementById("spend_addr_note"),
+        old_spend_val: 0
+    };
+    voting(from_time() == 0);
+    state.spend_time.value= state.old_spend_val;
+    update_power_time();
+    update_spend_addr();
+};
 
-var spend_time  = document.getElementById("spend_time");
-var button      = document.getElementById("button");
-var spend_addr  = document.getElementById("spend_addr");
-var power_time  = document.getElementById("power_time");
-var progress    = document.getElementById("progress");
-var passed      = document.getElementById("passed");
-var to_fraction = document.getElementById("to_fraction");
-
-var amount_note     = document.getElementById("amount_note");
-var spend_addr_note = document.getElementById("spend_addr_note");
 
 
 var vote_address = "TODO";
