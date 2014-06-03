@@ -2,9 +2,6 @@
 
 var date = new Date();
 
-var avail_time  = document.getElementById("avail_time");
-var reg_time    = document.getElementById("reg_time");
-var cur_time    = document.getElementById("cur_time");
 var spend_time  = document.getElementById("spend_time");
 var button      = document.getElementById("button");
 var spend_addr  = document.getElementById("spend_addr");
