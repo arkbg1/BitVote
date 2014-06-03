@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<body>
+Current Time: 
+<br />
+<iframe src="http://free.timeanddate.com/clock/i46izfik/n211/tluk/tt0/tw0/tm3/td2/th1/ta1/tb3" frameborder="0" width="174" height="18"></iframe>
+<br />
+</script>
+Spent Vote-Time: 
+<br />00:00:00
+<br />
+<br />Available Vote-Time: 
+<br />00:00:00
+
+
+<br />
+
+<br />Registration Time
+<br /><button onclick="myFunction()">REGISTER</button>
+<p id="demo">
+<script>
+function myFunction() {
+    var d = new Date();
+    document.getElementById("demo").innerHTML = d.getTime();
+}
+</script>
+<script>
+function startTime() {
+    var today=new Date();
+    var h=today.getHours();
+    var m=today.getMinutes();
+    var s=today.getSeconds();
+    m = checkTime(m);
+    s = checkTime(s);
+    document.getElementById('txt').innerHTML = h+":"+m+":"+s;
+    var t = setTimeout(function(){startTime()},500);
+}
+
+function checkTime(i) {
+    if (i<10) {i = "0" + i};  // add zero in front of numbers < 10
+    return i;
+}
+
+</body>
+</html>
