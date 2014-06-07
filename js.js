@@ -35,8 +35,8 @@ var amount_note     = document.getElementById("amount_note");
 var spend_addr_note = document.getElementById("spend_addr_note");
 
 var increment_buttons_p = false;
-var increment_buttons = [["+5s", 5], ["+min", 60], ["+10min", 600], ["+hour", 3600], 
-                         ["+day", 86400], ["+week", 604800], ["+season", 7889400]]
+var increment_buttons = [["+5sec", 5], ["+1min", 60], ["+10min", 600], ["+1hour", 3600], 
+                         ["+1day", 86400], ["+1week", 604800], ["+1month", 2592000]]
 
 var vote_address = "TODO";
 
