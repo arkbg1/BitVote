@@ -78,10 +78,11 @@ function to_time_string(t, upto)
 function update_power_time()
 {   
     date = new Date();
-    ge_set_innerHTML("register_time", to_time_string(registered()));
+    registered_date = new Date(1000*registered())
+    ge_set_innerHTML("register_time", registered_date.toLocaleString());
     ge_set_innerHTML("power_time",    to_time_string(power_available()));
     ge_set_innerHTML("spent_time",    to_time_string(power_spent()));
-    ge_set_innerHTML("current_time",  to_time_string(date.getTime()/1000));
+    ge_set_innerHTML("current_time",  date.toLocaleString());
 }
 
 function notition(element, className, innerHTML)
