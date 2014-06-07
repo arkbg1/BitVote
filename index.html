@@ -38,7 +38,7 @@
 
 <br />
 
-<button id="register_button" onclick="register()">REGISTER HERE</button>
+<button id="register_button" onclick="register()">START HERE</button>
 
 <br />
 
@@ -48,20 +48,20 @@
 <br />
 
 <table>
-<tr><td></td> <td>Current:</td>      <td id="current_time"></td></tr>
-<tr style="border-bottom: 2px"><td class="note">minus</td> <td>Registered:</td> <td id="register_time"></td></tr>
-<tr><td class="note">minus</td> <td>Spent:</td>    <td id="spent_time"></td></tr>
-<tr><td class="note">equals</td> <td>Powah</td>    <td id="power_time"></td></tr>
+<tr><td class="note">add</td> <td>CurrentTime:</td>      <td id="current_time"></td></tr>
+<tr style="border-bottom: 2px"><td class="note">minus</td> <td>Registered Time:</td> <td id="register_time"></td></tr>
+<tr><td class="note">minus</td> <td>SpentVote-Time:</td>    <td id="spent_time"></td></tr>
+<tr><td class="note">equals</td> <td>Available Vite-Time:</td>    <td id="power_time"></td></tr>
 </table>
 
 <table id="entry_table">
-<tr><td><b>Vote</b></td><td>amount:</td><td>
+<tr><td>Vote-Time:</td><td>
     <input type="number" id="spend_time" value="0" onkeyup="update_spend_time()" onchange="update_spend_time();">
     <br>
     <span id="increment_buttons"></span>
 </td><td id="amount_note"></td></tr>
 <br>
-<tr><td></td><td>To:</td><td>
+<tr><td>http://</td><td>
 <!-- Really we probably want a address input,
      that can do stuff like look at NameReg automatically.
      But also want to have it be an accepted votable.. -->
