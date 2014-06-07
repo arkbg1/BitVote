@@ -1,26 +1,17 @@
 //Note; just mucked up for now.
 
-var state;
-window.onload = function() {
-    state = {
-        date: new Date(),
-        spend_time: document.getElementById("spend_time"),
-        button: document.getElementById("button"),
-        spend_addr: document.getElementById("spend_addr"),
-        power_time: document.getElementById("power_time"),
-        progress: document.getElementById("progress"),
-        passed: document.getElementById("passed"),
-        to_fraction: document.getElementById("to_fraction"),
-        amount_note: document.getElementById("amount_note"),
-        spend_addr_note: document.getElementById("spend_addr_note"),
-        old_spend_val: 0
-    };
-    voting(from_time() == 0);
-    state.spend_time.value= state.old_spend_val;
-    update_power_time();
-    update_spend_addr();
-};
+var date = new Date();
 
+var spend_time  = document.getElementById("spend_time");
+var button      = document.getElementById("button");
+var spend_addr  = document.getElementById("spend_addr");
+var power_time  = document.getElementById("power_time");
+var progress    = document.getElementById("progress");
+var passed      = document.getElementById("passed");
+var to_fraction = document.getElementById("to_fraction");
+
+var amount_note     = document.getElementById("amount_note");
+var spend_addr_note = document.getElementById("spend_addr_note");
 
 
 var vote_address = "TODO";
@@ -169,13 +160,23 @@ function voting(which)
     document.getElementById("register_button").hidden = !which;
 }
 
+
+var pokingtons_patience = 1000;
+function sir_pokington()
+{   
+    update_spend_time();
+    update_spend_addr();
+    setTimeout(function(){ sir_pokington(); }, pokingtons_patience);
+}
+
+
 function register()
 {   var_from_time = date.getTime();
     voting(false);
     update_power_time();
+    
+    sir_pokington();
 }
 
 voting(from_time() == 0);
 spend_time.value= old_spend_val;
-update_power_time();
-update_spend_addr();
