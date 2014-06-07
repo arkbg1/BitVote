@@ -1,79 +1,28 @@
 <!DOCTYPE html>
 <html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+        <title>Prototype VOTE MINIONS</title>
+        <meta name="viewport" content="width=device-width">
+        <link rel="stylesheet" href="css/main.css">
+    </head>
+<body>
+<h1>Prototype VOTE MINIONS</h1>
 
-  <head>
-    <meta charset='utf-8' />
-    <meta http-equiv="X-UA-Compatible" content="chrome=1" />
-    <meta name="description" content="Protecting Ethereum from Social and Political Attacks." />
+<a href="https://www.youtube.com/watch?v=9pSh0VAVYn4">VOTE or DIE</a>
 
-    <link rel="stylesheet" type="text/css" media="screen" href="stylesheets/stylesheet.css">
-
-    <title>Bitvote</title>
-  </head>
-
-  <body>
-
-    <!-- HEADER -->
-    <div id="header_wrap" class="outer">
-        <header class="inner">
-          <a id="forkme_banner" href="https://github.com/arkbg1/BitVote">View on GitHub</a>
-
-          <h1 id="project_title">Bitvote</h1>
-          <h2 id="project_tagline">Protecting Ethereum from Social and Political.</h2>
-
-            <section id="downloads">
-              <a class="zip_download_link" href="https://github.com/arkbg1/BitVote/zipball/master">Download this project as a .zip file</a>
-              <a class="tar_download_link" href="https://github.com/arkbg1/BitVote/tarball/master">Download this project as a tar.gz file</a>
-            </section>
-        </header>
-    </div>
-
-    <!-- MAIN CONTENT -->
-    <div id="main_content_wrap" class="outer">
-      <section id="main_content" class="inner">
-        <h3>
-<a name="proof-of-concept" class="anchor" href="#proof-of-concept"><span class="octicon octicon-link"></span></a>Proof of Concept</h3>
-
-<p><h1>BitVote Demonstration</h1>
-
-
-
-<p>Current Time: <span id="current_time"></span> UTC</p>
-
-<button id="register_button" onclick="register()">START HERE</button>
+<button id="register_button" onclick="register()">Grow your powah!</button>
 
 <span id="voting_whole">
-
-<p>Registration Time: <span id="register_time"></span> UTC</p>
-<p>Spent Vote-Time: <span id="spent_time"></span></p>
-<p>Available Vote-Time: <b id="power_time"></b></p>
-
-
-
-
-
- <!-- arkbg1: 4 timers go here
-1. Registration Time: hh:mm:ss   (static, on click)
-http://www.w3schools.com/js/tryit.asp?filename=tryjs_date_gettime
-2. Current Time: hh:mm:ss   (live)
-http://www.w3schools.com/js/tryit.asp?filename=tryjs_timing_clock
-3. Spent Vote-Time: 00:00:00  (static, simple placeholder now - interactive later)
-4. Available Vote-Time: hh:mm:ss  (live, stop watch on click)
-
-
- <p>Registration Time: <b id="registration_time"></b></p
- <p>Current Time: <b id="current_time"></b></p
- <p>Spent Time: <b id="spent_time"></b></p
- <p>Available Time: <b id="available_time"></b></p
-
- -->
+<p>SUCH Voting-powah grows EVERY MILLISECOND: <b id="power_time"></b></p>
 
 <table id="entry_table">
-<tr><td>Vote-Time:</td><td>
+<tr><td><b>Vote</b></td><td>amount:</td><td>
     <input type="number" id="spend_time" value="0" onkeyup="update_spend_time()" onchange="update_spend_time();"><button id="to_fraction", onclick="button_to_fraction()">to 10%</button>
 </td><td id="amount_note"></td></tr>
 <br>
-<tr><td>Http://</td><td>
+<tr><td></td><td>To:</td><td>
 <!-- Really we probably want a address input,
      that can do stuff like look at NameReg automatically.
      But also want to have it be an accepted votable.. -->
@@ -87,115 +36,4 @@ http://www.w3schools.com/js/tryit.asp?filename=tryjs_timing_clock
 
 <script src="js.js"></script>
 </body>
-
-
-
-
-<br />
-<br />BitVote ChainBlock<a href="https://www.youtube.com/watch?v=9pSh0VAVYn4">*</a>
-
-<pre><code>$ http://vote.bit/o-jasper/Register/ -00:00:01 @o-jasper +20140529T220609
-$ http://vote.bit/Stephan.Tual/Register/ -00:00:01 @Stephan.Tual +20140529T221311
-$ http://where_is_my_coffee_Stephan.com -00:01:00 @o-jasper +20140529T220709
-$ http://wtf_im_not_your_mother_jasper.com -00:01:00 @Stephan.Tual +20140529T221411
-$ http://can_you_two_please_focus_we_have_a_deadline.com -00:22:00 @arkbg1 +20120103T130122
-</code></pre>
-
-<p>If you're using the GitHub for Mac, simply sync your repository and you'll see the new branch.</p>
-<br />
-<br />
-<h3>
-<a name="the+inspiration" class="anchor" href="#The-Inspiration"><span class="octicon octicon-link"></span></a>The Inspiration</h3>
-
-<br />Our project is inspired by the 2012 SOPA Blackout in which Internet users rose up and defeated political corruption. With Ethereum as our platform, we can build a tool capable of duplicating the effect of the Blackout. 
-<br />
-<br />The solution is code-named BitVote. The project has been developing for over two years through the teamwork of an amoeba of coders, videographers, activists, and normal citizens around the world. All the developers have one thing in common: a desire to have the voice of the people heard and heeded. 
-<br />
-<br />
-
-<h3>
-<a name="the-concept" class="anchor" href="#the-concept"><span class="octicon octicon-link"></span></a>The Concept</h3>
-
-<br />A decentralized voting system on the Internet, partly inspired by Bitcoin’s ChainBlock technology, with no authoritarian control influencing the system. Once it’s up, it develops itself. The coding is open to everyone, and the main record of votes can be accessed by anyone, from anywhere. This ensures transparency of the system and a built-in safeguard against manipulation and censorship.
-<br />
-<br />
-
-<h3>
-<a name="terminology" class="anchor" href="#terminology"><span class="octicon octicon-link"></span></a>Terminology</h3>
-
-<br />The main three variables in the system can be thought of as name, idea, and time. The “name” of the BitVoter will be an anonymized, authenticated user ID. The idea will be any http link. The time will be however many Vote Hours a voter wants to use toward that cause, depending on how important it is to them. If it’s only mildly important, they may use one of their 24 Vote Hours for one day to give to that cause. Or, if it’s very important to them, they may use all of their Vote Hours for one day, one week, or one month on that idea.
-<br />
-<br />Voting units are hours of actual, real life or “Vote Hours.” Every voter has 24 Vote Hours in one day and thus just under 9,000 Vote Hours per year. The number of Vote Hours an issue receives will translate to how important it is to voters. Issues can be as small as a local business attempting to expand in your neighborhood, or as large as Stop SOPA. 
-<br />
-<br />Vote hours can be saved up and used at a later time. Consequently, frugal voters will have more weight on big issues, and less thrifty voters will operate more like citizen journalists or idea developers. A voter could save up a year’s worth of Vote Hours and then use them all one day on the linked idea “<a href="http://www.Make-animal-abuse-a-felony.com" target="_blank" rel="nofollow">http://www.Make-animal-abuse-a-felony.com</a>.” 
-<br />
-<br />Voters can create their own BitVotes. Then others can create BitVotes that support, modify, or counter them. The system will be integrated and easily accessible from social media outlets, and put legislative control in accordance with the will of the people. 
-<br />
-<br />This functions similar to Reddit in that it organizes linked ideas and sorts them, except it is based on a gradient amount of scarce VoteHours as opposed to only one “upvote” or “downvote” per linked idea per account. 
-<br />
-<br />Example:
-<br />
-<br />Jim wants to build a recreation center for teens in his town. He creates a video, fact page, paste bin, etc., or links an existing page such as <a href="https://www.Build-a-Teen-Recreation-Center-in-Boulder-Colorado.com" target="_blank" rel="nofollow">https://www.Build-a-Teen-Recreation-Center-in-Boulder-Colorado.com</a> then he devotes 12 of his VoteHours on the day he creates the BitVote vote. He then shares his BitVote via his social media profile and encourages his friends and neighbors to contribute some of their VoteHours to it. Some of his contacts may choose to give some of their VotesHours to the cause, some may ignore him, and other may create their own BitVotes to modify Jim’s idea such as <a href="https://www.Build-a-Teen-Recreation-Center-in-Boulder-Colorado-By-Increasing-Property-Tax-5%.com" target="_blank" rel="nofollow">https://www.Build-a-Teen-Recreation-Center-in-Boulder-Colorado-By-Increasing-Property-Tax-5%.com</a> which can also be modified.
-<br />
-<br />If a voter finds a vulnerability or thinks of an improvement to the actual system, he or she can BitVote their idea directly to the main record. The goal is not to have a perfect system, but one that constantly evolves and adapts, while retaining the core concept of every person having an equal voice. It is a living document. BitVote will become more efficient, more secure, and more useful as time goes on and more Voters contribute ideas and technology to its enhancement. 
-<br />
-<br />The functions of the system are endless. BitVote itself does not serve as an analyst to make sense of the votes. That’s up to voters, app creators, coders, researchers, businesses, and governments. The 24 VoteHour system is superior to a Single-Vote-per-Issue system because it provides a multidimensional data set that can be interpreted and expressed according to any number of different parameters. Software developers will have an opportunity here to develop analysis software that can filter data by a number of criteria such as location, time, or subject. 
-<br />
-<br />Examples:
-<br />
-<br />Governments- A town committee filters data from the BitVote system to analyze the public opinion for issues in their town and drafts policy based on the expressed will of the people. 
-<br />
-<br />Voters- Bob wants to donate to a charity for children. He uses an BitVote analysis application on his phone to isolate issues with the keyword “children” to find something that appeals to him but hasn’t grabbed substantial public attention yet, as evidenced by its low number of VoteHours. This way he can donate to the cause he determines to be most in need.
-<br />
-<br />Businesses- Businesses can examine BitVote statistics and decide which products appeal to their customers, which are controversial, and what public stance on certain issues may deter customers. 
-<br />
-<br />Researchers- Time Magazine wants to publish articles about issues that are most important to the public. Their research teams analyze the data by number of votes for an issue, average percentage of  Voters’ allotted hours dedicated to a certain issue, or other statistical methods that provide an accurate depiction of the interest of readers.
-<br />
-<br />
-<br />Each voter will be have anonymity on the system, differentiated from others only by an ID number. Voters use their authenticated account to access BitVote and contribute. There are a number of ideas circulating for authentication, which can be discussed later, but it must be linked to each individual voter’s biological uniqueness. Some will work long-term, some only in the initial stages of the application. The key here is that the BitVoters can improve user authentication as technology develops.
-<br />
-<br />A few examples for basic authentication can be found here: 
-<br />
-<br />-Cellular phone
-<br />-Active Authentication - 
-<br />-DHT of PGPs (Team X) - <a href="https://github.com/Open-Vote/Plan/blob/master/README.md" target="_blank" rel="nofollow">https://github.com/Open-Vote/Plan/blob/master/README.md</a>
-<br />
-<span class="VideoWrap"><span class="Video YouTube" id="youtube-fgNpOzvwOiU"><span class="VideoPreview"><a href="//youtube.com/watch?v=fgNpOzvwOiU"><img src="//img.youtube.com/vi/fgNpOzvwOiU/0.jpg" width="640" height="385" border="0" /></a></span><span class="VideoPlayer"></span></span></span>
-<br />
-<br />Eventually the technology will be available to authenticate users based on more secure and confidential biologic elements such as fingerprints, iris patterns, DNA, voice, etc.
-<br />
-<br />In summary, BitVote can be a catalyst for any number of real world actions. Like the Internet, it has no functional boundaries. Anyone who has web access can create a BitVote that is important to them and potentially bring their idea or issue to the eye of the public at large. This project can feasibly provide a turning point in history in which the people effectively take the power out of the hands of corrupt leaders and institutions. 
-<br />
-<br />In reaction to the SOPA Blackout many derivative groups have formed in order to protect the Internet, the world’s most valuable tool for freedom. However, the problem with groups like Reddit, the Internet Defense League, and Internet Association is their use of the same old tactics that stall threats to the Internet but do not provide a longterm solution. BitVote provides a solution that will strengthen with time. We have seen what the Internet is capable of, how it has the power to expose corruption and deter counterproductive agendas such as that of the FCC against Net Neutrality. Ethereum, like Bitcoin, cannot directly protect itself from political and social attacks. BitVote, like Wikipedia, Reddit, and BitCoin, is a revolutionary crowdsourced concept, but needs a code base platform to launch. That’s why BitVote needs Ethereum. In turn, BitVote can protect Ethereum, as well as the entire Internet, from social and political attacks.
-<br />
-<br />
-
-<h3>
-<a name="authors-and-contributors" class="anchor" href="#authors-and-contributors"><span class="octicon octicon-link"></span></a>Authors and Contributors</h3>
-
-<p>You can <a href="https://github.com/blog/821" class="user-mention">@mention</a> a GitHub username to generate a link to their profile. The resulting <code>&lt;a&gt;</code> element will link to the contributor's GitHub Profile. For example: In 2007, Chris Wanstrath (<a href="https://github.com/defunkt" class="user-mention">@defunkt</a>), PJ Hyett (<a href="https://github.com/pjhyett" class="user-mention">@pjhyett</a>), and Tom Preston-Werner (<a href="https://github.com/mojombo" class="user-mention">@mojombo</a>) founded GitHub. </p>
-
-<p>In 2012, Aaron Bale (<a href="https://github.com/arkbg1" class="user-mention">@arkbg1</a>), Aaron Swartz (<a href="https://github.com/aaronsw" class="user-mention">@aaronsw</a>) and Sven Swootleg (<a href="https://github.com/joepie91" class="user-mention">@joepie91</a>) and Leah Chase (<a href="https://twitter.com/LeahxPearl" class="user-mention">@leahxpearl</a>) founded BitVote.
-</p>
-<p>In 2014, BitVote began collaborating with Jasper den Ouden (<a href="https://github.com/o-jasper" class="user-mention">@o-jasper</a>) and Stephan Tual (<a href="https://github.com/stephantual" class="user-mention">@stephantual</a>) of Ethereum.
-</p>
-
-<h3>
-<a name="support-or-contact" class="anchor" href="#support-or-contact"><span class="octicon octicon-link"></span></a>Support or Contact</h3>
-
-<p>Having trouble with Pages? Check out the documentation at <a href="http://help.github.com/pages">http://help.github.com/pages</a> or contact <a href="mailto:support@github.com">support@github.com</a> and we’ll help you sort it out.</p>
-      </section>
-    </div>
-
-    <!-- FOOTER  -->
-    <div id="footer_wrap" class="outer">
-      <footer class="inner">
-        <p class="copyright">Bitvote maintained by <a href="https://github.com/arkbg1">arkbg1</a></p>
-        <p>Published with <a href="http://pages.github.com">GitHub Pages</a></p>
-      </footer>
-    </div>
-
-    
-
-  </body>
 </html>
