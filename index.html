@@ -4,7 +4,7 @@
   <head>
     <meta charset='utf-8' />
     <meta http-equiv="X-UA-Compatible" content="chrome=1" />
-    <meta name="description" content="Protecting Ethereum from Social and Political Attacks." />
+    <meta name="description" content="Protecting the Internet from Social and Political Attacks." />
 
     <link rel="stylesheet" type="text/css" media="screen" href="stylesheets/stylesheet.css">
 
@@ -19,7 +19,7 @@
           <a id="forkme_banner" href="https://github.com/arkbg1/BitVote">View on GitHub</a>
 
           <h1 id="project_title">Bitvote</h1>
-          <h2 id="project_tagline">Protecting Ethereum from Social and Political.</h2>
+          <h2 id="project_tagline">Protecting the Internet from Social and Political Attacks.</h2>
 
             <section id="downloads">
               <a class="zip_download_link" href="https://github.com/arkbg1/BitVote/zipball/master">Download this project as a .zip file</a>
@@ -52,32 +52,16 @@
 <br />
 <br />
 
- <!-- arkbg1: 4 timers go here
-1. Registration Time: hh:mm:ss   (static, on click)
-http://www.w3schools.com/js/tryit.asp?filename=tryjs_date_gettime
-2. Current Time: hh:mm:ss   (live)
-http://www.w3schools.com/js/tryit.asp?filename=tryjs_timing_clock
-3. Spent Vote-Time: 00:00:00  (static, simple placeholder now - interactive later)
-4. Available Vote-Time: hh:mm:ss  (live, stop watch on click)
-
-
- <p>Registration Time: <b id="registration_time"></b></p
- <p>Current Time: <b id="current_time"></b></p
- <p>Spent Time: <b id="spent_time"></b></p
- <p>Available Time: <b id="available_time"></b></p
-
- -->
-
 <table id="entry_table">
-<tr><td>Vote-Time:</td><td>
-    <input type="number" id="spend_time" value="0" onkeyup="update_spend_time()" onchange="update_spend_time();"><button id="to_fraction", onclick="button_to_fraction()">to 10%</button>
-</td><td id="amount_note"></td></tr>
-<br>
-<tr><td>Http://</td><td>
+<tr><td>http://</td><td>
 <!-- Really we probably want a address input,
      that can do stuff like look at NameReg automatically.
      But also want to have it be an accepted votable.. -->
     <input type="text" id="spend_addr", onkeyup="update_spend_addr()" onchange="update_spend_addr()"></td><td id="spend_addr_note"></td></tr>
+<br>
+<tr><td>Vote-Time:</td><td>
+    <input type="number" id="spend_time" value="0" onkeyup="update_spend_time()" onchange="update_spend_time();"><button id="to_fraction", onclick="button_to_fraction()">to 10%</button>
+</td><td id="amount_note"></td></tr>
 </table> 
 <button id="button" onclick="spend_time_button();">VOTE</button> 
 
