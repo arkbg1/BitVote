@@ -34,6 +34,9 @@ var spend_addr  = document.getElementById("spend_addr");
 var amount_note     = document.getElementById("amount_note");
 var spend_addr_note = document.getElementById("spend_addr_note");
 
+var increment_buttons_p = false;
+var increment_buttons = [["+5s", 5], ["+min", 60], ["+10min", 600], ["+hour", 3600], 
+                         ["+day", 86400], ["+week", 604800], ["+season", 7889400]]
 
 var vote_address = "TODO";
 
@@ -48,7 +51,7 @@ function from_time()
 {   return var_from_time; }
 
 function power_available()  // Amount of time available to spend.
-{   return date.getTime()/1000 - from_time(); }
+{   return Math.floor(date.getTime()/1000 - from_time()); }
 
 var var_registered = 0;
 function registered()
@@ -91,19 +94,6 @@ function notition(element, className, innerHTML)
     element.className = className;
 }
 
-var fractions = [10, 25, 50, 100];
-var cur_fraction = 0;
-function button_to_fraction()
-{
-    spend_time.value = Math.round(fractions[cur_fraction]*power_available()/100);
-    cur_fraction += 1;
-    if(cur_fraction > fractions.length - 1)
-    {  cur_fraction = 0; }
-    text = 'to ' + fractions[cur_fraction] + '%';
-    if( text == 'to 100%' ){ text = 'ALL'; }
-    ge_set_innerHTML("to_fraction", text);
-    update_spend_time();
-}
 
 var old_spend_val = 0;
 function update_spend_time()
@@ -126,6 +116,15 @@ function update_spend_time()
     { pct = (100*spend_time.value/power_available()).toString().substr(0,4)
       notition(amount_note, 'note', '(' + pct + '%)');
       old_spend_val = spend_time.value;
+    }
+    if( increment_buttons_p )
+    {   t = power_available()/1 - spend_time.value/1;
+        for(var i = 0 ; i< increment_buttons.length ; i++)
+        {  if( t < increment_buttons[i][1] ) // Not enough for adding this much.
+           { ge_set_innerHTML(increment_buttons[i][0], null, 'note'); }
+           else
+           { ge_set_innerHTML(increment_buttons[i][0], null, ''); }
+        }
     }
 }
 
@@ -222,15 +221,58 @@ function sir_pokington()
     setTimeout(function(){ sir_pokington(); }, pokingtons_patience);
 }
 
+function create_increment_buttons()
+{
+    element = document.getElementById("increment_buttons");
+    if( element!=null )
+    {   increment_buttons_p = true;
+        string = "";
+        for(var i = 0 ; i< increment_buttons.length ; i++)
+        {  info = increment_buttons[i];
+           string += '<button id="' + info[0];
+           string += '" onclick="add_amount(' + info[1] + ')">'
+           if(info.length == 2)
+           {  string += info[0]; }
+           else
+           {  string += info[2]; }
+           string += '</button>';
+        }
+        element.innerHTML = string;
+    }
+}
 
 function register()
 {   var_from_time = date.getTime()/1000;
     var_registered = var_from_time;
     voting(false);
     update_power_time();
+    create_increment_buttons();
     
     sir_pokington();
 }
 
 voting(from_time() == 0);
 spend_time.value= old_spend_val;
+
+// Buttons!
+
+//Add amounts.
+function add_amount(amount)
+{   spend_time.value = spend_time.value/1 + amount;
+    update_spend_time();
+}
+
+
+var cur_fraction = 0;  //Fractions that rotate/
+function rotating_button_to_fraction()
+{   fractions = [10, 25, 50, 100];
+
+    spend_time.value = Math.round(fractions[cur_fraction]*power_available()/100);
+    cur_fraction += 1;
+    if(cur_fraction > fractions.length - 1)
+    {  cur_fraction = 0; }
+    text = 'to ' + fractions[cur_fraction] + '%';
+    if( text == 'to 100%' ){ text = 'ALL'; }
+    ge_set_innerHTML("to_fraction", text);
+    update_spend_time();
+}
