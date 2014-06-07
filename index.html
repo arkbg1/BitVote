@@ -47,10 +47,11 @@
 <p>+ Current Time: <span id="current_time"></span> UTC</p>
 <p>- Registered Time: <span id="register_time"></span> UTC</p>
 <p>- Spent VoteTime: <span id="spent_time"></span></p>
-<p>= Available VoteTime: <b id="power_time"></b></p>
+<p>= Available VoteTime: <span id="power_time"></span></p>
 
 <br />
 <br />
+
 
 
 
@@ -75,18 +76,7 @@
     <input type="text" id="spend_addr" onkeyup="update_spend_addr()" onchange="update_spend_addr()"></td><td id="spend_addr_note"></td></tr>
 </table> 
 
-
-<table id="entry_table">
-<tr><td>http://</td><td>
-<!-- Really we probably want a address input,
-     that can do stuff like look at NameReg automatically.
-     But also want to have it be an accepted votable.. -->
-    <input type="text" id="spend_addr", onkeyup="update_spend_addr()" onchange="update_spend_addr()"></td><td id="spend_addr_note"></td></tr>
-<br>
-<tr><td>Vote-Time:</td><td>
-    <input type="number" id="spend_time" value="0" onkeyup="update_spend_time()" onchange="update_spend_time();"><button id="to_fraction", onclick="button_to_fraction()">to 10%</button>
-</td><td id="amount_note"></td></tr>
-</table> 
+ 
 <button id="button" onclick="spend_time_button();">VOTE</button> 
 
 <p id="progress"></p>
