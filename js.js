@@ -2,13 +2,34 @@
 
 var date = new Date();
 
+var elements = {}
+
+function ge(element_id)  // Assumes ids do not get added afterwards!
+{  got = elements[element_id]
+   if(got == null)
+   { element = document.getElementById(element_id);
+     if(element == null)
+     { elements[element_id] = 'none'; }
+     else
+     { elements[element_id] = element
+       got = element;
+     }
+   }
+   else if(got == 'none')
+   { return null; }
+   return got
+}
+
+function ge_set_innerHTML(element_id, innerHTML, className)
+{ got = ge(element_id)
+  if( got!=null )
+  { if(innerHTML != null){ got.innerHTML = innerHTML; }
+    if(className != null){ got.className = className; }
+  }
+}
+
 var spend_time  = document.getElementById("spend_time");
-var button      = document.getElementById("button");
 var spend_addr  = document.getElementById("spend_addr");
-var power_time  = document.getElementById("power_time");
-var progress    = document.getElementById("progress");
-var passed      = document.getElementById("passed");
-var to_fraction = document.getElementById("to_fraction");
 
 var amount_note     = document.getElementById("amount_note");
 var spend_addr_note = document.getElementById("spend_addr_note");
@@ -27,12 +48,40 @@ function from_time()
 {   return var_from_time; }
 
 function power_available()  // Amount of time available to spend.
-{   return date.getTime() - from_time(); }
+{   return date.getTime()/1000 - from_time(); }
+
+var var_registered = 0;
+function registered()
+{   return var_registered; }
+
+function power_spent()
+{   return from_time()/1 - registered()/1; }
+
+function to_time_string(t, upto)
+{
+    s  = Math.floor(t);
+    m  = Math.floor(s/60);
+    h  = Math.floor(m/60);
+    d  = Math.floor(h/24);
+
+    s = (s%60).toString();
+    m = (m%60).toString();
+    h = (h%24).toString();
+    if( s.length == 1 ){ s = '0' + s; }
+    if( m.length == 1 ){ m = '0' + m; }
+    if( h.length == 1 ){ h = '0' + h; }
+    
+    str = d + ' days, ' + h + ':' + m + ':' + s;
+    return str;
+}
 
 function update_power_time()
 {   
     date = new Date();
-    power_time.innerHTML = power_available();
+    ge_set_innerHTML("register_time", to_time_string(registered()));
+    ge_set_innerHTML("power_time",    to_time_string(power_available()));
+    ge_set_innerHTML("spent_time",    to_time_string(power_spent()));
+    ge_set_innerHTML("current_time",  to_time_string(date.getTime()/1000));
 }
 
 function notition(element, className, innerHTML)
@@ -51,7 +100,7 @@ function button_to_fraction()
     {  cur_fraction = 0; }
     text = 'to ' + fractions[cur_fraction] + '%';
     if( text == 'to 100%' ){ text = 'ALL'; }
-    to_fraction.innerHTML = text;
+    ge_set_innerHTML("to_fraction", text);
     update_spend_time();
 }
 
@@ -94,9 +143,8 @@ function complete_spend(vote_for)
 }*/
 
 function pretend_transact(vote_for, amount)
-{
-//    alert(amount);
-//    var_from_time = var_from_time + amount;
+{  //Lol @ javascript dumb.
+    var_from_time = from_time()/1 + amount/1; // Goes negative..
 }
 
 function do_spend_time(vote_for, amount)
@@ -131,7 +179,7 @@ function spend_time_button()
     // * against accidental repeat?
     // * against spending limit of topic?
     if( participated[spend_addr.value] == null )
-    { do_spend_time(spend_addr.value, spend_time.value);  }
+    { do_spend_time(spend_addr.value, spend_time.value); }
     spend_addr.value = ''
     update_spend_addr()
 }
@@ -149,9 +197,13 @@ function update_progress()
         {    progress_innerHTML += '<tr><td>' + key + '</td><td>' + obj.amount + '</td></tr>'; }
     }
     if( passed_innerHTML != '' )
-    {   passed.innerHTML = '<h4>Transactions arrived</h4><table>' + passed_innerHTML + '</table>'; }
+    {   ge_set_innerHTML("passed",
+                         '<h4>Votes arrived</h4><table>' + passed_innerHTML + '</table>');
+    }
     if( progress_innerHTML != '' )
-    {   progress.innerHTML = '<h4>Transactions in progress</h4><table>' + progress_innerHTML + '</table>'; }
+    {   ge_set_innerHTML("progress",
+                         '<h4>Votes underway</h4><table>' + progress_innerHTML + '</table>');
+    }
 }
 
 function voting(which)
@@ -171,7 +223,8 @@ function sir_pokington()
 
 
 function register()
-{   var_from_time = date.getTime();
+{   var_from_time = date.getTime()/1000;
+    var_registered = var_from_time;
     voting(false);
     update_power_time();
     
