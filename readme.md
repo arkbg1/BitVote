@@ -1,4 +1,4 @@
-<<< <a href="http://youtube.com/">Video*</a>
+<<< <a href="https://www.youtube.com/watch?v=i5QVMIzR_kE">Video(old)</a>
  | <a href="http://arkbg1.github.io/BitVote/">Demo</a>
  | <a href="https://github.com/o-jasper/VOTE_MINIONS">Code</a>
  | <a href="http://forum.ethereum.org/discussion/941/bitvote-protecting-ethereum-from-social-attacks">SE Plan</a>
