@@ -1,10 +1,9 @@
- | <a href="http://youtube.com/">Video*</a>
+<<< <a href="http://youtube.com/">Video*</a>
  | <a href="http://arkbg1.github.io/BitVote/">Demo</a>
  | <a href="https://github.com/o-jasper/VOTE_MINIONS">Code</a>
  | <a href="http://forum.ethereum.org/discussion/941/bitvote-protecting-ethereum-from-social-attacks">SE Plan</a>
  | <a href="https://github.com/arkbg1/BitVote/blob/gh-pages/TechPlan.md">Tech Plan</a>
- | <a href="1MRCGygu7547srSatp2Va1gqco1H5uRf8S">Donate</a>
-<br />
+ | <a href="1MRCGygu7547srSatp2Va1gqco1H5uRf8S">Donate</a> >>>
 <br />
 
 <h1>Bitvote</h1>
