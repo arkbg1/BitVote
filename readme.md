@@ -1,6 +1,6 @@
 <<< <a href="http://arkbg1.github.io/BitVote/">Wiki</a>
  | <a href="http://arkbg1.github.io/BitVote/">Demo</a>
- | <a href="https://www.youtube.com/watch?v=i5QVMIzR_kE">Video(old)</a>
+ | <a href="https://www.youtube.com/watch?v=i5QVMIzR_kE">Video*</a>
  | <a href="http://forum.ethereum.org/discussion/941/bitvote-protecting-ethereum-from-social-attacks">Concept</a>
  | <a href="https://github.com/arkbg1/BitVote/wiki/*A*-plan">Code</a>
  | <a href="1MRCGygu7547srSatp2Va1gqco1H5uRf8S">Donate</a> >>>
